@@ -105,3 +105,17 @@ body.intro-active section,
 body.intro-active footer {
   visibility: hidden;
 }
+
+@media (max-width: 768px) {
+  #intro {
+    padding: 20px;
+  }
+
+  .intro-container {
+    transform: scale(0.7); /* shrink animation */
+  }
+
+  .text-block h1 {
+    font-size: 2rem; /* reduce text size */
+  }
+}

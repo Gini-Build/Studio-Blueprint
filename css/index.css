@@ -272,3 +272,64 @@
     font-size: 2rem;
   }
 }
+
+/* =========================
+   HAMBURGER BUTTON
+========================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--white);
+  transition: 0.3s ease;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden */
+    height: 100vh;
+    width: 70%;
+
+    background: var(--primary-blue);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+
+    transition: right 0.4s ease;
+  }
+
+  /* ACTIVE STATE */
+  .navbar nav.active {
+    right: 0;
+  }
+
+  .navbar nav a {
+    font-size: 1.5rem;
+    color: white;
+  }
+}
