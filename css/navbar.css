@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "SubHeadings-Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ==========================
+   NAVBAR BASE
+========================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 1000;
+
+  background: transparent;
+}
+
+/* ==========================
+   BRAND COLORS
+========================== */
+:root {
+  --primary-blue: #315dfe;
+  --white: #ffffff;
+  --accent-yellow: #fed04f;
+}
+
+/* ==========================
+   LOGO
+========================== */
+.logo {
+  height: 50px; /* controls size */
+  width: auto;
+}
+
+/* ==========================
+   NAV LINKS
+========================== */
+.navbar nav {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar nav a {
+  font-family: "SubHeadings-Montserrat", sans-serif;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+/* subtle hover */
+.navbar nav a:hover {
+  opacity: 0.6;
+  color: var(--accent-yellow);
+}
+
+/* underline animation */
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  color: var(--accent-yellow);
+  width: 0%;
+  height: 2px;
+  background: var(--accent-yellow);
+
+  transition: width 0.3s ease;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+/* ==========================
+   SCROLLED NAVBAR STATE
+========================== */
+
+.navbar.scrolled {
+  background: var(--primary-blue);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.4s ease;
+}
+
+/* keep text clean on blue */
+.navbar.scrolled nav a {
+  color: var(--white);
+}
+
+/* hover still yellow */
+.navbar.scrolled nav a:hover {
+  color: var(--accent-yellow);
+}
