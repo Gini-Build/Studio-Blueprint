@@ -1,3 +1,25 @@
+@font-face {
+  font-family: "SubHeadings-Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Headings-CalSans";
+  src:
+    url("../assets/fonts/CalSans-SemiBold.otf") format("opentype"),
+    url("../assets/fonts/CalSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Body-Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
 /* =========================
    INTRO (CENTERED)
 ========================= */

@@ -1,14 +1,15 @@
 @font-face {
   font-family: "SubHeadings-Montserrat";
-  src: url("../fonts/Montserrat-SemiBold.otf") format("opentype");
+  src: url("../assets/fonts/Montserrat-Bold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Headings-CalSans";
   src:
-    url("../fonts/CalSans-SemiBold.otf") format("opentype"),
-    url("../fonts/CalSans-SemiBold.ttf") format("truetype");
+    url("../assets/fonts/CalSans-SemiBold.otf") format("opentype"),
+    url("../assets/fonts/CalSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -16,9 +17,29 @@
 @font-face {
   font-family: "Body-Montserrat";
   src: url("../assets/fonts/Montserrat-Regular.otf") format("opentype");
-
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
+}
+/* global */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Headings-CalSans", sans-serif;
+  font-weight: 600;
+}
+
+body {
+  font-family: "Body-", sans-serif;
+}
+
+.subheading,
+.btn,
+nav a {
+  font-family: "SubHeadings-Montserrat", sans-serif;
+  font-weight: 600;
 }
 
 * {
@@ -214,7 +235,7 @@ body {
   width: 100%;
   padding: 160px 0 140px;
 
-  background: var(--primary-blue);
+  background: var(--white);
 
   display: flex;
   justify-content: center;
@@ -234,7 +255,8 @@ body {
 
   padding: 70px 90px;
 
-  background: rgba(255, 255, 255, 0.85);
+  /* background: rgba(255, 255, 255, 0.85); */
+  background: var(--primary-blue);
   backdrop-filter: blur(12px);
 
   border-radius: 18px;
@@ -288,7 +310,7 @@ body {
   line-height: 1.2;
   letter-spacing: -1px;
 
-  color: #000;
+  color: var(--white);
 }
 
 .value-content p {
@@ -298,7 +320,7 @@ body {
   font-size: 1.1rem;
   line-height: 1.7;
 
-  color: #555;
+  color: var(--white);
 }
 
 /* SUBTLE ACCENT LINE */
@@ -310,6 +332,154 @@ body {
 
   width: 60px;
   height: 3px;
+}
+
+/* =========================
+   SERVICES PREVIEW
+========================= */
+
+.services-preview {
+  background: var(--primary-blue);
+  text-align: center;
+  position: relative;
+}
+
+/* HEADER */
+.services-header {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-header h2 {
+  font-family: "Headings-CalSans", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.services-header p {
+  font-family: "Body-Montserrat", sans-serif;
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+/* .service-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+
+  text-align: left;
+
+  transition: all 0.3s ease;
+
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+} */
+.service-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+
+  padding: 30px;
+  border-radius: 18px;
+
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    0 30px 60px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.4s ease;
+}
+
+/* HOVER */
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.service-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* IMAGE */
+.service-image {
+  width: 100%;
+  height: 500px; /* controls size of image box */
+  border-radius: 12px;
+  overflow: hidden; /* THIS is critical */
+  position: relative;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* DARK OVERLAY (premium look) */
+.service-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* HOVER ZOOM */
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+/* TEXT */
+.service-card h3 {
+  font-family: "SubHeadings-Montserrat", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* LIST */
+.service-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-card li {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+/* CTA */
+.section-cta {
+  margin-top: 60px;
 }
 
 /* =========================
@@ -332,43 +502,43 @@ body {
   }
 }
 
-/* =========================
+/* /* =========================
    HAMBURGER BUTTON
 ========================= */
 
-.hamburger {
+/* .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
   z-index: 1100;
-}
+} */
 
-.hamburger span {
+/* .hamburger span {
   width: 25px;
   height: 3px;
   background: var(--white);
   transition: 0.3s ease;
-}
+} */
 
 /* =========================
    MOBILE MENU
 ========================= */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .navbar {
     grid-template-columns: 1fr auto;
   }
 
   .hamburger {
     display: flex;
-  }
+  } */
 
-  .navbar nav {
+/* .navbar nav {
     position: fixed;
     top: 0;
     right: -100%; /* hidden */
-    height: 100vh;
+/* height: 100vh;
     width: 70%;
 
     background: var(--primary-blue);
@@ -380,15 +550,307 @@ body {
     gap: 30px;
 
     transition: right 0.4s ease;
-  }
+  }  */
 
-  /* ACTIVE STATE */
-  .navbar nav.active {
+/* ACTIVE STATE */
+/* .navbar nav.active {
     right: 0;
   }
 
   .navbar nav a {
     font-size: 1.5rem;
     color: white;
+  } */
+.work-preview {
+  text-align: center;
+  padding: 100px 20px;
+  background: #f9fafb;
+}
+
+/* Heading */
+.work-preview h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Subheading (CENTERED PROPERLY) */
+.work-preview .muted {
+  max-width: 550px;
+  margin: 0 auto 50px;
+  color: #6b7280;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   GRID
+========================= */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* =========================
+   PROJECT CARDS
+========================= */
+.work-item {
+  height: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+/* IMAGE FIX */
+.work-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* THIS fixes stretching */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.work-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0); /* invisible */
+
+  transition: background 0.35s ease;
+  z-index: 1;
+}
+
+/* title fades in + moves up */
+.work-item:hover .work-overlay h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.work-item:hover::before {
+  background: rgba(0, 0, 0, 0.7); /* strong dark overlay */
+}
+
+/* hover effect */
+.work-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   TEXT OVERLAY
+========================= */
+.work-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+  pointer-events: none; /* prevents hover issues */
+}
+
+.work-overlay h3 {
+  font-family: "subheadings-montserrat", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(20px);
+  color: var(--white);
+}
+
+.work-item:hover .work-overlay h3 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* =========================
+   ABOUT PREVIEW (REFINED)
+========================= */
+.about-preview {
+  background: var(--primary-blue);
+  color: white;
+  padding: 120px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle background image */
+.about-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/images/about-bg.jpg") center/cover no-repeat;
+  opacity: 0.06; /* slightly reduced for cleaner look */
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 🔥 EXACT 50/50 SPLIT */
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   TEXT SIDE
+========================= */
+.about-text {
+  max-width: 500px;
+}
+
+.about-content h2 {
+  font-family: "subheadings-montserrat", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.about-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #d1d5db; /* slightly brighter for contrast */
+  margin-bottom: 30px;
+}
+
+/* =========================
+   IMAGE SIDE (FIXED)
+========================= */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+/* 🔥 THIS IS THE KEY FIX */
+.about-image img {
+  width: 100%;
+  max-width: 520px; /* 🔥 sweet spot for 50/50 layout */
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 0.95;
+  transition: all 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.04);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.about-content .btn {
+  margin-top: 10px;
+}
+
+/* =========================
+   FINAL CTA (UPGRADED)
+========================= */
+.final-cta {
+  text-align: center;
+  padding: 140px 20px;
+
+  background: linear-gradient(135deg, #07393c, #2c666e);
+  color: #fff;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow layer */
+.final-cta::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.06);
+  filter: blur(140px);
+  top: -150px;
+  left: -150px;
+}
+
+/* subtle pattern / texture */
+.final-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("assets/images/noise.png");
+  opacity: 0.04;
+}
+
+/* heading */
+.final-cta h2 {
+  font-family: "subheadings-montserrat", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  position: relative;
+  z-index: 2;
+}
+
+/* button */
+.final-cta .btn.primary {
+  background: #fff;
+  color: #07393c;
+  font-weight: 600;
+  padding: 14px 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.final-cta .btn.primary:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .about-preview {
+    padding: 80px 20px;
   }
+
+  .about-content h2,
+  .final-cta h2 {
+    font-size: 2rem;
+  }
+
+  .final-cta {
+    padding: 100px 20px;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: var(--primary-blue); /* matches your dark sections */
+  color: var(--white); /* muted text */
+  padding: 40px 20px;
+
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* text */
+footer p {
+  font-family: "Body", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
 }
