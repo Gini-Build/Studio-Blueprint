@@ -1,0 +1,482 @@
+/* =========================
+   RESET + GLOBAL
+========================= */
+
+@font-face {
+  font-family: "SubHeadings-Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Headings-CalSans";
+  src:
+    url("../assets/fonts/CalSans-SemiBold.otf") format("opentype"),
+    url("../assets/fonts/CalSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Body-Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Headings-CalSans", sans-serif;
+  font-weight: 600;
+}
+
+body {
+  font-family: "Body-", sans-serif;
+}
+
+.subheading,
+.btn,
+nav a {
+  font-family: "SubHeadings-Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+/* ==========================
+   BRAND COLORS
+========================== */
+:root {
+  --primary-blue: #315dfe;
+  --white: #ffffff;
+  --accent-yellow: #fed04f;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+    radial-gradient(circle at center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  color: white;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-family: "SubHeadings", sans-serif;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* =========================
+   ABOUT HERO
+========================= */
+.about-hero {
+  background: url("../assets/images/Hero-Desktop.JPG");
+  background-size: cover;
+  background-position: center;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-family: "SubHeadings", sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: white;
+  color: #111;
+}
+
+.btn.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   INTRO SECTION 
+========================= */
+/* section spacing */
+.about-intro {
+  padding: 140px 20px;
+  background: var(--white);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* 🔥 give text more space */
+  gap: 80px;
+  align-items: center;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =========================
+   HEADLINE
+========================= */
+.intro-text h2 {
+  font-size: 2.6rem;
+  line-height: 1.3;
+  margin-bottom: 24px;
+
+  max-width: 100%; /* prevents long ugly lines */
+}
+
+/* =========================
+   LEAD TEXT (KEY LINE)
+========================= */
+.intro-text .lead {
+  font-family: "SubHeadings", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+
+  color: #111;
+  max-width: 90%;
+}
+
+/* =========================
+   BODY TEXT
+========================= */
+.intro-text p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  color: #6b7280;
+  margin-bottom: 16px;
+
+  max-width: 480px;
+  max-width: 95%;
+}
+
+/* =========================
+   TEXT SPACING FIX
+========================= */
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =========================
+   IMAGE PLACEHOLDER
+========================= */
+.intro-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 THIS REPLACES PLACEHOLDER */
+.image-frame {
+  width: 100%;
+  max-width: 450px;
+  height: 500px;
+
+  border-radius: 16px;
+  overflow: hidden; /* 🔥 VERY IMPORTANT */
+
+  background: #e5e7eb; /* fallback while loading */
+}
+
+/* 🔥 FORCE IMAGE TO FIT PERFECTLY */
+.image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover; /* fills nicely */
+  display: block;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .intro-image {
+    margin-top: 30px;
+  }
+
+  .image-placeholder {
+    height: 220px;
+    max-width: 300px;
+  }
+}
+
+/* =========================
+   ABOUT SECTIONS
+========================= */
+.about-section {
+  padding: 120px 20px;
+  background: #f9fafb;
+}
+
+.about-section.dark {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+.about-section.dark .about-text p {
+  color: #d1d5db;
+}
+
+/* =========================
+   IMAGE
+========================= */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.about-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* =========================
+   APPROACH GRID (NEW)
+========================= */
+.about-section {
+  background: var(--white);
+}
+
+/* grid */
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+/* =========================
+   CARD
+========================= */
+.approach-item {
+  padding: 40px 30px;
+  border-radius: 18px;
+
+  background: var(--primary-blue);
+  color: white;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  position: relative;
+  overflow: hidden; /* 🔥 REQUIRED */
+
+  transition: all 0.25s ease;
+}
+
+/* text */
+.approach-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.approach-item p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HOVER (SUBTLE)
+========================= */
+.approach-item:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-yellow);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   RIPPLE EFFECT (REFINED)
+========================= */
+.approach-item::after {
+  content: "";
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background: rgba(255, 255, 255, 0.08); /* 🔥 MUCH softer */
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.approach-item:hover::after {
+  animation: rippleCard 1s ease-out;
+}
+
+/* animation */
+@keyframes rippleCard {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(15);
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(25);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: var(--primary-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-image {
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .about-image img {
+    max-width: 250px;
+  }
+
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,246 @@
+/* =========================
+   GLOBAL
+========================= */
+body {
+  font-family: "Body", sans-serif;
+  margin: 0;
+  color: #111;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@font-face {
+  font-family: "SubHeadings-Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Headings-CalSans";
+  src:
+    url("../assets/fonts/CalSans-SemiBold.otf") format("opentype"),
+    url("../assets/fonts/CalSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Body-Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+/* global */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Headings-CalSans", sans-serif;
+  font-weight: 600;
+}
+
+body {
+  font-family: "Body-", sans-serif;
+}
+
+.subheading,
+.btn,
+nav a {
+  font-family: "SubHeadings-Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* ==========================
+   BRAND COLORS
+========================== */
+:root {
+  --primary-blue: #315dfe;
+  --white: #ffffff;
+  --accent-yellow: #fed04f;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact-section {
+  padding: 140px 20px;
+
+  background:
+    linear-gradient(rgba(10, 9, 12, 0.85), rgba(10, 9, 12, 0.95)),
+    url("../assets/images/contact-bg.JPEG");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+}
+
+/* HEADER */
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.contact-header p {
+  color: var(--white);
+}
+
+/* GRID */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+.contact-info h3 {
+  margin-bottom: 20px;
+}
+
+.info-item {
+  margin-bottom: 20px;
+}
+
+.info-item span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent-yellow);
+}
+
+.info-item p {
+  color: var(--white);
+}
+
+/* =========================
+   FORM
+========================= */
+.contact-form {
+  background: black;
+  padding: 40px;
+  border-radius: 18px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  padding: 12px 0;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: white;
+  outline: none;
+}
+
+/* floating label */
+.input-box span {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+
+/* animation */
+.input-box input:focus ~ span,
+.input-box textarea:focus ~ span,
+.input-box input:valid ~ span,
+.input-box textarea:valid ~ span {
+  top: -10px;
+  font-size: 0.75rem;
+  color: #ffd84d;
+}
+
+/* textarea */
+textarea {
+  resize: none;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+  width: 100%;
+  padding: 14px;
+
+  border-radius: 999px;
+  border: none;
+
+  background: var(--primary-blue);
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #0a4a4d;
+}
+
+/* note */
+.form-note {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 35px 20px;
+
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}

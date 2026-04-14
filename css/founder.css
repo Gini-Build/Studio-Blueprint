@@ -1,0 +1,297 @@
+@font-face {
+  font-family: "SubHeadings-Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Headings-CalSans";
+  src:
+    url("../assets/fonts/CalSans-SemiBold.otf") format("opentype"),
+    url("../assets/fonts/CalSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Body-Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+/* global */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Headings-CalSans", sans-serif;
+  font-weight: 600;
+}
+
+body {
+  font-family: "Body-", sans-serif;
+}
+
+.subheading,
+.btn,
+nav a {
+  font-family: "SubHeadings-Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* ==========================
+   BRAND COLORS
+========================== */
+:root {
+  --primary-blue: #315dfe;
+  --white: #ffffff;
+  --accent-yellow: #fed04f;
+}
+
+/* hero image */
+.founder-hero {
+  background: url("../assets/images/Founder-img.jpeg") center / cover no-repeat;
+}
+
+/* =========================
+   INTRO GRID (FIXED BALANCE)
+========================= */
+.founder-intro {
+  padding: 140px 0; /* 🔥 more breathing room */
+  background-color: var(--primary-blue);
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* =========================
+   IMAGE (CONTROLLED)
+========================= */
+.image-frame {
+  width: 100%;
+  max-width: 700px;
+  height: 700px;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* center image nicely */
+.founder-image {
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   TEXT (IMPROVED READABILITY)
+========================= */
+.founder-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.founder-text h2 {
+  font-size: 2.4rem;
+  line-height: 1.3;
+  color: var(--white);
+  text-align: center;
+}
+
+.founder-text p {
+  color: var(--white);
+  line-height: 1.75;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+/* =========================
+   STORY SECTION
+========================= */
+.founder-story {
+  padding: 140px 20px;
+  background: #f8f9fc;
+}
+
+.founder-story .lead {
+  font-size: 1.3rem;
+  font-family: "SubHeadings", sans-serif;
+  margin-bottom: 20px;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* =========================
+   FOUNDER STORY (REFINED)
+========================= */
+.founder-story {
+  padding: 140px 20px;
+
+  background: #f8f9fc; /* soft contrast section */
+  position: relative;
+}
+
+/* container already centered via .narrow */
+
+/* =========================
+   LEAD (HIGHLIGHT LINE)
+========================= */
+.founder-story .lead {
+  font-family: "SubHeadings", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.6;
+
+  color: #111;
+
+  margin-bottom: 30px;
+
+  position: relative;
+}
+
+/* subtle accent line */
+.founder-story .lead::before {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px;
+
+  width: 60px;
+  height: 3px;
+
+  background: #2c666e;
+  border-radius: 2px;
+}
+
+/* =========================
+   BODY TEXT
+========================= */
+.founder-story p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  color: black;
+
+  margin-bottom: 18px;
+}
+
+/* =========================
+   TEXT WIDTH CONTROL
+========================= */
+.founder-story .narrow {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================
+   OPTIONAL DEPTH (SUBTLE)
+========================= */
+.founder-story::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.02),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================
+   CTA
+========================= */
+.founder-cta {
+  padding: 140px 20px;
+  text-align: center;
+  background: #0a090c;
+  color: white;
+}
+
+.founder-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-family: "SubHeadings", sans-serif;
+}
+
+.btn.primary {
+  background: white;
+  color: #111;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: var(--primary-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 30px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .founder-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .image-frame {
+    margin: 0 auto;
+    height: 380px;
+  }
+}

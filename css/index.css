@@ -840,8 +840,8 @@ body {
    FOOTER
 ========================= */
 footer {
-  background: var(--primary-blue); /* matches your dark sections */
-  color: var(--white); /* muted text */
+  background: var(--primary-blue);
+  color: var(--white);
   padding: 40px 20px;
 
   text-align: center;
