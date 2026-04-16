@@ -8,8 +8,6 @@ const navMenu = document.querySelector(".navbar nav");
 // SCROLL EFFECT
 // ==========================
 window.addEventListener("scroll", () => {
-  console.log("scrolling", window.scrollY);
-
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {

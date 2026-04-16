@@ -5,62 +5,92 @@
   font-style: normal;
 }
 
-/* ==========================
-   NAVBAR BASE
-========================== */
+@font-face {
+  font-family: "Headings-CalSans";
+  src:
+    url("../assets/fonts/CalSans-SemiBold.otf") format("opentype"),
+    url("../assets/fonts/CalSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Body-Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Headings-CalSans", sans-serif;
+  font-weight: 600;
+}
+
+/* =========================
+   NAVBAR BASE (FORCED FIX)
+========================= */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 20px 40px;
   z-index: 1000;
 
+  display: flex !important;
+  align-items: center !important;
+
+  padding: 25px 40px;
+
   background: transparent;
-  transition: all 0.4s ease;
+
+  transition:
+    background 0.4s ease,
+    backdrop-filter 0.4s ease,
+    padding 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* ==========================
-   BRAND COLORS
-========================== */
-:root {
-  --primary-blue: #315dfe;
-  --white: #ffffff;
-  --accent-yellow: #fed04f;
-}
-
-/* ==========================
-   LOGO
-========================== */
+/* =========================
+   LOGO (LEFT)
+========================= */
 .logo {
-  height: 50px; /* controls size */
-  width: auto;
+  height: 40px;
+  flex-shrink: 0;
 }
 
-/* ==========================
-   NAV LINKS
-========================== */
+/* =========================
+   NAV LINKS (CENTER FIXED)
+========================= */
 .navbar nav {
-  display: flex;
+  display: flex !important;
   gap: 30px;
+
+  margin: 0 auto !important; /* 🔥 centers nav */
 }
 
 .navbar nav a {
   font-family: "SubHeadings-Montserrat", sans-serif;
-  text-decoration: none;
+  font-size: 1.4rem !important;
+  font-weight: 600;
   color: var(--white);
-  font-size: 1.3rem;
-  letter-spacing: 1px;
+  text-decoration: none;
+
   position: relative;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
 }
 
-/* subtle hover */
+/* hover */
 .navbar nav a:hover {
-  opacity: 0.6;
   color: var(--accent-yellow);
 }
 
@@ -70,7 +100,7 @@
   position: absolute;
   bottom: -5px;
   left: 0;
-  color: var(--accent-yellow);
+
   width: 0%;
   height: 2px;
   background: var(--accent-yellow);
@@ -82,33 +112,26 @@
   width: 100%;
 }
 
-/* ==========================
-   SCROLLED NAVBAR STATE
-========================== */
-
+/* =========================
+   SCROLLED STATE
+========================= */
 .navbar.scrolled {
-  /* background: var(--primary-blue);
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); */
   background: rgba(49, 93, 254, 0.9);
   backdrop-filter: blur(10px);
+
+  padding: 18px 40px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* keep text clean on blue */
-.navbar.scrolled nav a {
-  color: var(--white);
-}
-
-/* hover still yellow */
-.navbar.scrolled nav a:hover {
-  color: var(--accent-yellow);
-}
-
-/* HAMBURGER */
+/* =========================
+   HAMBURGER (RIGHT FIXED)
+========================= */
 .hamburger {
+  margin-left: auto !important; /* 🔥 forces right side */
+
   display: none;
   flex-direction: column;
-  gap: 5px;
   cursor: pointer;
 }
 
@@ -116,21 +139,29 @@
   width: 25px;
   height: 3px;
   background: white;
+  margin: 4px 0;
+
   transition: 0.3s;
 }
 
-/* ANIMATION */
+/* =========================
+   HAMBURGER ANIMATION
+========================= */
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* MOBILE NAV */
+/* =========================
+   MOBILE NAV
+========================= */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -141,16 +172,28 @@
     top: 100%;
     left: 0;
     width: 100%;
+
     background: var(--primary-blue);
 
     flex-direction: column;
     align-items: center;
+
     padding: 20px 0;
 
-    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: 0.3s ease;
   }
 
   .navbar nav.active {
-    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .navbar nav a {
+    padding: 10px 0;
   }
 }

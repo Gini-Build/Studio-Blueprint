@@ -55,7 +55,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 /* ==========================
@@ -88,7 +88,7 @@ body {
 ========================= */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   align-items: center;
@@ -387,6 +387,151 @@ footer {
   color: #9ca3af;
   text-align: center;
   padding: 30px;
+}
+
+/* =========================
+   NAVBAR BASE
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 25px 40px;
+
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
+/* =========================
+   SCROLLED STATE
+========================= */
+.navbar.scrolled {
+  background: #07393c; /* 🔥 your primary blue */
+  padding: 18px 40px;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* subtle premium effect */
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+.navbar nav {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar nav a {
+  font-family: "SubHeadings-Montserrat", sans-serif;
+  font-size: 0.95rem;
+
+  color: white;
+  text-decoration: none;
+
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* hover underline effect */
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+  height: 2px;
+  background: #ffd84d; /* accent */
+
+  transition: width 0.3s ease;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background: #07393c;
+
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: 0.3s ease;
+  }
+
+  .navbar nav.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .navbar nav a {
+    padding: 10px 0;
+  }
+}
+
+/* =========================
+   HAMBURGER ANIMATION
+========================= */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* =========================

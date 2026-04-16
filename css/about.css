@@ -41,10 +41,6 @@ h6 {
 }
 
 body {
-  font-family: "Body-", sans-serif;
-}
-
-body {
   font-family: "Body-Montserrat", sans-serif;
 }
 
@@ -240,24 +236,22 @@ nav a {
   align-items: center;
 }
 
-/* 🔥 THIS REPLACES PLACEHOLDER */
 .image-frame {
   width: 100%;
   max-width: 450px;
   height: 500px;
 
   border-radius: 16px;
-  overflow: hidden; /* 🔥 VERY IMPORTANT */
+  overflow: hidden;
 
-  background: #e5e7eb; /* fallback while loading */
+  background: #e5e7eb;
 }
 
-/* 🔥 FORCE IMAGE TO FIT PERFECTLY */
 .image-frame img {
   width: 100%;
   height: 100%;
 
-  object-fit: cover; /* fills nicely */
+  object-fit: cover;
   display: block;
 }
 
@@ -366,7 +360,7 @@ nav a {
   border: 1px solid rgba(255, 255, 255, 0.05);
 
   position: relative;
-  overflow: hidden; /* 🔥 REQUIRED */
+  overflow: hidden;
 
   transition: all 0.25s ease;
 }
@@ -409,7 +403,7 @@ nav a {
   width: 10px;
   height: 10px;
 
-  background: rgba(255, 255, 255, 0.08); /* 🔥 MUCH softer */
+  background: rgba(255, 255, 255, 0.08);
 
   border-radius: 50%;
 
