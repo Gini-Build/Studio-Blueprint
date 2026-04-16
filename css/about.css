@@ -44,6 +44,10 @@ body {
   font-family: "Body-", sans-serif;
 }
 
+body {
+  font-family: "Body-Montserrat", sans-serif;
+}
+
 .subheading,
 .btn,
 nav a {
