@@ -110,9 +110,9 @@ nav a {
 }
 
 .hero p {
+  font: "subheadings-montserrat", sans-serif;
   margin-top: 20px;
-  font-family: "SubHeadings", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.85);
 }
 
