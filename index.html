@@ -3,16 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- FONTS -->
 
-    <title>Studio Blueprint | Strategy-First Branding</title>
+    <!-- Primary SEO -->
+    <title>Studio Blueprint | Branding, Content & Social Media Studio</title>
     <meta
       name="description"
-      content="Studio Blueprint helps businesses build a clear and consistent online presence through design, content and strategy."
+      content="Studio Blueprint helps businesses build a clear and consistent online presence through graphic design, content creation and social media strategy."
+    />
+    <meta name="author" content="Studio Blueprint" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://studioblueprint.co.za/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Studio Blueprint" />
+    <meta
+      property="og:title"
+      content="Studio Blueprint | Branding, Content & Social Media Studio"
+    />
+    <meta
+      property="og:description"
+      content="Studio Blueprint helps businesses build a clear and consistent online presence through graphic design, content creation and social media strategy."
+    />
+    <meta property="og:url" content="https://studioblueprint.co.za/" />
+    <meta
+      property="og:image"
+      content="https://studioblueprint.co.za/assets/images/HeroImage.PNG"
+    />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Studio Blueprint | Branding, Content & Social Media Studio"
+    />
+    <meta
+      name="twitter:description"
+      content="Studio Blueprint helps businesses build a clear and consistent online presence through graphic design, content creation and social media strategy."
+    />
+    <meta
+      name="twitter:image"
+      content="https://studioblueprint.co.za/assets/images/HeroImage.PNG"
     />
 
-    <!-- CSS -->
+    <!-- Favicon & Theme -->
+    <link rel="icon" type="image/png" href="/assets/images/Asset 4@1.5x.png" />
+    <meta name="theme-color" content="#315dfe" />
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://studioblueprint.co.za/#organization",
+            "name": "Studio Blueprint",
+            "url": "https://studioblueprint.co.za",
+            "logo": "https://studioblueprint.co.za/assets/images/Asset%204%401.5x.png",
+            "email": "hello@studioblueprint.co.za",
+            "sameAs": ["https://www.instagram.com/studioblueprint.co"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://studioblueprint.co.za/#website",
+            "url": "https://studioblueprint.co.za",
+            "name": "Studio Blueprint",
+            "publisher": {
+              "@id": "https://studioblueprint.co.za/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://studioblueprint.co.za/#webpage",
+            "url": "https://studioblueprint.co.za/",
+            "name": "Studio Blueprint | Branding, Content & Social Media Studio",
+            "description": "Studio Blueprint helps businesses build a clear and consistent online presence through graphic design, content creation and social media strategy.",
+            "isPartOf": { "@id": "https://studioblueprint.co.za/#website" },
+            "about": { "@id": "https://studioblueprint.co.za/#organization" }
+          }
+        ]
+      }
+    </script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/intro.css" />
     <link rel="stylesheet" href="css/navbar.css" />
@@ -183,7 +258,7 @@
         </div>
 
         <div class="work-item">
-          <img src="assets/images/socialPreview.jpg" alt="Social media work" />
+          <img src="assets/images/socialPreview.jpeg" alt="Social media work" />
           <div class="work-overlay">
             <h3>Social Media</h3>
           </div>
@@ -236,7 +311,10 @@
     </footer>
 
     <!-- JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer
+    ></script>
     <script src="js/main.js"></script>
     <script src="js/intro.js"></script>
     <script src="js/navbar.js"></script>
