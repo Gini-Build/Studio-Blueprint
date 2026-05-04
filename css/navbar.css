@@ -80,7 +80,7 @@ h6 {
 
 .navbar nav a {
   font-family: "SubHeadings-Montserrat", sans-serif;
-  font-size: 1.4rem !important;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--white);
   text-decoration: none;
@@ -163,6 +163,14 @@ h6 {
    MOBILE NAV
 ========================= */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 18px 20px;
+  }
+
+  .navbar.scrolled {
+    padding: 14px 20px;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -194,6 +202,9 @@ h6 {
   }
 
   .navbar nav a {
-    padding: 10px 0;
+    padding: 14px 20px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 }

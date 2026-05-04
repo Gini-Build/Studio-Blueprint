@@ -144,6 +144,17 @@ body {
 
   .hero-buttons {
     flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
   }
 }
 
@@ -210,6 +221,18 @@ body {
 
 .section {
   padding: 120px 10%;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 5%;
+  }
 }
 
 .section h2 {
@@ -380,6 +403,26 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-header h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-header h2 {
+    font-size: 1.8rem;
+  }
 }
 
 .service-card {
@@ -759,6 +802,11 @@ body {
     padding: 80px 20px;
   }
 
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
   .about-content h2,
   .final-cta h2 {
     font-size: 2rem;
@@ -766,6 +814,25 @@ body {
 
   .final-cta {
     padding: 100px 20px;
+  }
+
+  .value {
+    padding: 80px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content h2,
+  .final-cta h2 {
+    font-size: 1.7rem;
+  }
+
+  .value {
+    padding: 60px 20px;
+  }
+
+  .work-preview {
+    padding: 60px 20px;
   }
 }
 
@@ -865,6 +932,14 @@ body {
    MOBILE MENU
 ========================= */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 18px 20px;
+  }
+
+  .navbar.scrolled {
+    padding: 14px 20px;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -895,7 +970,10 @@ body {
   }
 
   .navbar nav a {
-    padding: 10px 0;
+    padding: 14px 20px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 }
 

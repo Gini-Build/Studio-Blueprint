@@ -230,12 +230,45 @@ footer {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
+  .contact-section {
+    padding: 100px 20px 80px;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+
   .hero h1 {
     font-size: 2.2rem;
+  }
+
+  .input-box input,
+  .input-box textarea {
+    padding: 16px 0;
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 16px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 80px 20px 60px;
+  }
+
+  .contact-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
   }
 }

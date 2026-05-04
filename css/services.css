@@ -101,8 +101,8 @@ body {
   background: url("../assets/images/typing img.jpg");
   background-repeat: no-repeat;
 
-  background-size: 100%;
-  background-position: center 5%;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-overlay {
@@ -316,6 +316,26 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .services-intro {
+    padding: 80px 20px;
+  }
+
+  .services-list {
+    padding: 80px 20px;
+  }
+
+  .services-clarity {
+    padding: 80px 20px;
+  }
+
+  .services-pricing {
+    padding: 80px 20px;
+  }
+
+  .services-cta {
+    padding: 80px 20px;
+  }
+
   .services-intro h2 {
     font-size: 2rem;
   }
@@ -323,6 +343,57 @@ body {
   .services-clarity h2,
   .services-pricing h2 {
     font-size: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-intro {
+    padding: 60px 20px;
+  }
+
+  .services-list {
+    padding: 60px 20px;
+  }
+
+  .services-clarity {
+    padding: 60px 20px;
+  }
+
+  .services-pricing {
+    padding: 60px 20px;
+  }
+
+  .services-cta {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .services-intro h2 {
+    font-size: 1.7rem;
+  }
+
+  .services-clarity h2,
+  .services-pricing h2 {
+    font-size: 1.7rem;
+  }
+
+  .services-cta h2 {
+    font-size: 1.7rem;
   }
 }
 
@@ -485,6 +556,14 @@ footer {
    MOBILE MENU
 ========================= */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 18px 20px;
+  }
+
+  .navbar.scrolled {
+    padding: 14px 20px;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -515,7 +594,10 @@ footer {
   }
 
   .navbar nav a {
-    padding: 10px 0;
+    padding: 14px 20px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 }
 

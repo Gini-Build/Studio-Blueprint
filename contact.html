@@ -43,7 +43,7 @@
 
             <div class="info-item">
               <span>Email</span>
-              <p>placeholder@email.com</p>
+              <p>hello@studioblueprint.co.za</p>
             </div>
 
             <div class="info-item">
@@ -54,26 +54,32 @@
 
           <!-- RIGHT: FORM -->
           <div class="contact-form">
-            <form>
+            <form action="https://formspree.io/f/mjglvyqa" method="POST">
               <div class="input-box">
-                <input type="text" required />
+                <input type="text" name="full_name" required />
                 <span>Full Name</span>
               </div>
 
               <div class="input-box">
-                <input type="email" required />
+                <input type="email" name="email" required />
                 <span>Email</span>
               </div>
 
               <div class="input-box">
-                <input type="text" />
+                <input type="text" name="business_name" />
                 <span>Business / Brand Name</span>
               </div>
 
               <div class="input-box">
-                <textarea required></textarea>
+                <textarea name="message" required></textarea>
                 <span>Tell us about your brand...</span>
               </div>
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="New enquiry from Studio Blueprint website"
+              />
 
               <button type="submit" class="btn primary">Send Enquiry</button>
             </form>
